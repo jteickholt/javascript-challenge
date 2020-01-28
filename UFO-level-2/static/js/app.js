@@ -21,7 +21,7 @@ const uniqueCountries = allCountries.filter(unique);
 const uniqueStates = allStates.filter(unique);
 const uniqueShapes = allShapes.filter(unique);
 
-// sort the arrays that will go into the dropdowns.  Did not sort dates they were already in order and when 
+// sort the arrays that will go into the dropdowns.  Did not sort the dates as they were already in order and when 
 // attempting to sort them, got unexpected results.
 
 uniqueCities.sort();
@@ -41,7 +41,7 @@ uniqueDates.forEach(date => {
     var cell = dateDrop.append("option").text(date);
 })
 
-// load dates into the date dropdown form
+// load cities into the date dropdown form
 
 var cityDrop= d3.select("#city-dropdown");
 
@@ -84,92 +84,92 @@ d3.selectAll("button").on("click", function() {
  
 
 // Select the element for the date field and then extract the value
-    var dateElement = d3.select("#date-dropdown");
-    var date="";
-    var date = dateElement.property("value");
+  var dateElement = d3.select("#date-dropdown");
+  var date="";
+  var date = dateElement.property("value");
 
-// Below I go through succesiuve filters for each of the fields. I use the conditional to check to see if
-// field value is 'All', which means no filtering needed.  Given that I need to use the conditional
+// Below I go through succesive filters for each of the fields. I use the conditional to check to see if
+// the field value is 'All', which means no filtering is needed.  Given that I need to use the conditional
 // I couldn't think of a way to combine all of these filters.    
 
 // Filter the data to keep only records for the chosen date 
-    if (date === 'All') {
-      var filteredData = tableData;
-    }
-    else {
-        var filteredData = tableData.filter(tableData => tableData.datetime === date);
-    }
+  if (date === 'All') {
+    var filteredData = tableData;
+  }
+  else {
+    var filteredData = tableData.filter(tableData => tableData.datetime === date);
+  }
     
 // Select the element for the city field and extract the value
-    var cityElement = d3.select("#city-dropdown");
-    var city="";
-    var city = cityElement.property("value");
+  var cityElement = d3.select("#city-dropdown");
+  var city="";
+  var city = cityElement.property("value");
 
 // Now I will filter the data by city that has already been filtered by date 
 
-    if (city === "All") {
-      var filteredData = filteredData;
-    }
-    else {
-      var filteredData = filteredData.filter(filteredData => filteredData.city === city);
-    }
+  if (city === "All") {
+    var filteredData = filteredData;
+  }
+  else {
+    var filteredData = filteredData.filter(filteredData => filteredData.city === city);
+  }
     
 // Select the element for the state field and extract the value
-var stateElement = d3.select("#state-dropdown");
-var state="";
-var state = stateElement.property("value");
+  var stateElement = d3.select("#state-dropdown");
+  var state="";
+  var state = stateElement.property("value");
 
 // Now I will filter the data by state that has already been filtered by date, city 
 
-if (state === "All") {
-  var filteredData = filteredData;
-}
-else {
-  var filteredData = filteredData.filter(filteredData => filteredData.state === state);
-}
+  if (state === "All") {
+    var filteredData = filteredData;
+  }
+  else {
+    var filteredData = filteredData.filter(filteredData => filteredData.state === state);
+  }
 
 // Select the element for the country field and extract the value
-var countryElement = d3.select("#country-dropdown");
-var country="";
-var country = countryElement.property("value");
+  var countryElement = d3.select("#country-dropdown");
+  var country="";
+  var country = countryElement.property("value");
 
 // Now I will filter the data by country that has already been filtered by date, city, state 
 
-if (country === "All") {
-  var filteredData = filteredData;
-}
-else {
-  var filteredData = filteredData.filter(filteredData => filteredData.country === country);
-}
+  if (country === "All") {
+    var filteredData = filteredData;
+  }
+  else {
+    var filteredData = filteredData.filter(filteredData => filteredData.country === country);
+  }
  
 // Select the element for the country field and extract the value
-var shapeElement = d3.select("#shape-dropdown");
-var shape = "";
-var shape = shapeElement.property("value");
+  var shapeElement = d3.select("#shape-dropdown");
+  var shape = "";
+  var shape = shapeElement.property("value");
 
 // Now I will filter the data by country that has already been filtered by date, city, state 
 
-if (shape === "All") {
-  var filteredData = filteredData;
-}
-else {
-  var filteredData = filteredData.filter(filteredData => filteredData.shape === shape);
-}
+  if (shape === "All") {
+    var filteredData = filteredData;
+  }
+  else {
+    var filteredData = filteredData.filter(filteredData => filteredData.shape === shape);
+  }
 
 // After this last filter, the data will be filtered for all fields based on "And" criteria
 
 // Select the body of the table, then append rows and fill with filtered data
-    var tbody= d3.select("tbody");
+  var tbody= d3.select("tbody");
 
-    filteredData.forEach(sighting => {
-        var row = tbody.append("tr"); 
-        Object.entries(sighting).forEach(([key,value])=> {
-        var cell = row.append("td");
-        cell.text(value);
-        })   
-    })
+  filteredData.forEach(sighting => {
+    var row = tbody.append("tr"); 
+    Object.entries(sighting).forEach(([key,value])=> {
+      var cell = row.append("td");
+      cell.text(value);
+    })   
+  })
    
-  });
+});
   
 
 
