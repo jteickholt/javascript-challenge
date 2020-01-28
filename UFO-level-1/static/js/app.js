@@ -2,20 +2,17 @@
 var tableData = data;
 
 
+// Select the button that will filter the data
 
-
-
-// Select the button
 var button = d3.select("#filter-btn");
 
-// Define actions to take when clicked with the function
+// Define the function to be execture when the button is clicked
 button.on("click", function() {
 
 // Clear the table of data from previous selection
   var summary = d3.selectAll("#ufo-table>tbody>tr");
   summary.html("");
  
-
 // Select the element for the date field and then extract the value
     var dateElement = d3.select("#datetime");
     var date = dateElement.property("value");

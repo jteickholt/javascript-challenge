@@ -22,35 +22,124 @@
       </div>
     </nav>
     <div class="hero text-center">
-      <h1>UFO Sightings</h1>
-      <p>Crazy People Who Drink Too Much and See Things are Out There</p>
+      <div class="col-md-2">
+        <aside class="filters">
+          <div class="panel panel-default">
+            <div class="panel-heading">Filter Search</div>
+            <div class="panel-body">
+              <form>
+                <div class="form-group">
+                  <ul class="list-group" id="filters">
+                    <li class="filter list-group-item">
+                      <label for="date">Choose a Date</label>
+                      <!-- <input class="form-control" id="datetime" type="text" placeholder="1/11/2011"> -->
+                      <select name='dates' id="date-dropdown">
+                      <option value="All">All</option>
+                      </select>
+                    </li>
+                  </ul>
+                </div>
+                <button id="filter-btn1" type="button" class="btn btn-default">Click to Filter</button>
+              </form>
+            </div>
+          </div>
+        </aside>
+      </div>
+      <div class="col-md-2">
+        <aside class="filters">
+          <div class="panel panel-default">
+            <div class="panel-heading">Filter Search</div>
+            <div class="panel-body">
+              <form>
+                <div class="form-group">
+                  <ul class="list-group" id="filters">
+                    <li class="filter list-group-item">
+                      <label for="date">Choose a City</label>
+                      <!-- <input class="form-control" id="datetime" type="text" placeholder="1/11/2011"> -->
+                      <select name='cities' id="city-dropdown">
+                        <option value="All">All</option>
+                      </select>
+                    </li>
+                  </ul>
+                </div>
+                <button id="filter-btn2" type="button" class="btn btn-default">Click to Filter</button>
+              </form>
+            </div>
+          </div>
+        </aside>
+      </div>
+      <div class="col-md-2">
+        <aside class="filters">
+          <div class="panel panel-default">
+            <div class="panel-heading">Filter Search</div>
+            <div class="panel-body">
+              <form>
+                <div class="form-group">
+                  <ul class="list-group" id="filters">
+                    <li class="filter list-group-item">
+                      <label for="date">Choose a State</label>
+                      <!-- <input class="form-control" id="datetime" type="text" placeholder="1/11/2011"> -->
+                      <select name='states' id="state-dropdown">
+                        <option value="All">All</option>
+                      </select>
+                    </li>
+                  </ul>
+                </div>
+                <button id="filter-btn3" type="button" class="btn btn-default">Click to Filter</button>
+              </form>
+            </div>
+          </div>
+        </aside>
+      </div>
+      <div class="col-md-2">
+        <aside class="filters">
+          <div class="panel panel-default">
+            <div class="panel-heading">Filter Search</div>
+            <div class="panel-body">
+              <form>
+                <div class="form-group">
+                  <ul class="list-group" id="filters">
+                    <li class="filter list-group-item">
+                      <label for="date">Choose a Country</label>
+                      <!-- <input class="form-control" id="datetime" type="text" placeholder="1/11/2011"> -->
+                      <select name='countries' id="country-dropdown">
+                        <option value="All">All</option>
+                      </select>
+                    </li>
+                  </ul>
+                </div>
+                <button id="filter-btn4" type="button" class="btn btn-default">Click to Filter</button>
+              </form>
+            </div>
+          </div>
+        </aside>
+      </div>
+      <div class="col-md-2">
+        <aside class="filters">
+          <div class="panel panel-default">
+            <div class="panel-heading">Filter Search</div>
+            <div class="panel-body">
+              <form>
+                <div class="form-group">
+                  <ul class="list-group" id="filters">
+                    <li class="filter list-group-item">
+                      <label for="date">Choose a Shape</label>
+                      <!-- <input class="form-control" id="datetime" type="text" placeholder="1/11/2011"> -->
+                      <select name='shapes' id="shape-dropdown">
+                        <option value="All">All</option>
+                      </select>
+                    </li>
+                  </ul>
+                </div>
+                <button id="filter-btn5" type="button" class="btn btn-default">Click to Filter</button>
+              </form>
+            </div>
+          </div>
+        </aside>
+      </div>
     </div>
     <div class="container">
       <div class="row margin-top-50">
-        <div class="col-md-2">
-          <aside class="filters">
-            <div class="panel panel-default">
-              <div class="panel-heading">Filter Search</div>
-              <div class="panel-body">
-                <form>
-                  <div class="form-group">
-                    <ul class="list-group" id="filters">
-                      <li class="filter list-group-item">
-                        <label for="date">Enter a Date</label>
-                        <!-- <input class="form-control" id="datetime" type="text" placeholder="1/11/2011"> -->
-                        <select name='dates' id="date-dropdown">
-                          <option value="1/1/2010">01/01/2010</option>
-                          <option value="1/2/2010">01/02/2010</option>
-                        </select>
-                      </li>
-                    </ul>
-                  </div>
-                  <button id="filter-btn" type="button" class="btn btn-default">Click to Filter</button>
-                </form>
-              </div>
-            </div>
-          </aside>
-        </div>
         <div class="col-md-10">
           <div id="table-area" class="">
             <table id="ufo-table" class="table table-striped">
