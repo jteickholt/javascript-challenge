@@ -9,6 +9,6 @@ will find the folder js, which contains the app.js file used in the required por
 Within this folder, you will find the index.html file and the static subfolder. Within the static subfolder, you 
 will find the folder js, which contains the app.js file used in the bonus portion of the homework.
 
-#### 3. Other sub-folders were system generate I believe.
+#### 3. .vs-code:  I believe this was system generated.
 
 
